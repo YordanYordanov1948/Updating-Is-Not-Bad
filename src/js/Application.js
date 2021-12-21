@@ -1,9 +1,6 @@
 import EventEmitter from "eventemitter3";
 import anime from "animejs";
 
-const p = document.querySelector("p");
-console.log(p);
-
 export default class Application extends EventEmitter {
   static get events() {
     return {
@@ -17,13 +14,14 @@ export default class Application extends EventEmitter {
     this.emit(Application.events.READY);
   }
   init() {
-    document.querySelector("p").addEventListener("click", function () {
+    const p = document.querySelector("p");
+    p.addEventListener("click", () => {
+      // use anime.js
       anime({
-        targets: "div",
-        translateX: 250,
-        rotate: "1turn",
-        backgroundColor: "#FFF",
-        duration: 800,
+        targets: scrollElement,
+        scrollTop: 0,
+        duration: 500,
+        easing: "easeInOutQuad",
       });
     });
   }
