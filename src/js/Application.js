@@ -14,10 +14,14 @@ export default class Application extends EventEmitter {
     this.emit(Application.events.READY);
   }
   init() {
-    const p = document
-      .querySelector("p")
-      .addEventListener("click", function () {
-        console.log(p);
+    document.querySelector("p").addEventListener("click", function () {
+      anime({
+        targets: "div",
+        translateX: 250,
+        rotate: "1turn",
+        backgroundColor: "#FFF",
+        duration: 800,
       });
+    });
   }
 }
