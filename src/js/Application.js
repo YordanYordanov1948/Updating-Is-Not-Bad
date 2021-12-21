@@ -1,6 +1,9 @@
 import EventEmitter from "eventemitter3";
 import anime from "animejs";
 
+const p = document.querySelector("p");
+console.log(p);
+
 export default class Application extends EventEmitter {
   static get events() {
     return {
